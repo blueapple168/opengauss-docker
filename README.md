@@ -61,5 +61,5 @@ $ gsql -d postgres -U gaussdb -W'secretpassword@123' -h your-host-ip -p8888
 ```console
 $  docker run --name opengauss --privileged=true -d -e GS_PASSWORD=secretpassword@123 \
     -v /blueapple/opengauss:/var/lib/opengauss \
-    blueapple168/opengauss:latest
+    blueapple/opengauss:latest
 ```
