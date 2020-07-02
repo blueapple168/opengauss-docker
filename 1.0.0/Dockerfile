@@ -6,7 +6,7 @@ FROM centos:7.8.2003
 # https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.0/x86/openGauss-1.0.0-CentOS-64bit.tar.gz   
 # 1.0.0   openeuler_aarch64   5e7f4030f2d5a10794672d49aaf7012e0f5cea2f061d9ee69b49b2f15e522b1f
 # https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.0/arm/openGauss-1.0.0-openEuler-64bit.tar.gz
-ADD https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.0/x86/openGauss-1.0.0-CentOS-64bit.tar.gz /tmp/
+RUN curl https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.0/x86/openGauss-1.0.0-CentOS-64bit.tar.gz -fsSLO /tmp/openGauss-1.0.0-CentOS-64bit.tar.gz
 
 ENV LANG en_US.utf8
 
@@ -16,7 +16,7 @@ RUN set -eux; \
     yum install -y bzip2 bzip2-devel curl libaio && \
     mkdir -p /var/lib/opengauss && \
     mkdir -p /usr/local/opengauss && \
-    tar -zxvf openGauss-1.0.0-CentOS-64bit.tar.gz -C /usr/local/opengauss && \
+    tar -zxvf /tmp/openGauss-1.0.0-CentOS-64bit.tar.gz -C /usr/local/opengauss && \
     mkdir -p /var/run/opengauss && \
     chown -R gaussdb:gaussdb /var/run/opengauss && \
     chmod 2777 /var/run/opengauss && \
