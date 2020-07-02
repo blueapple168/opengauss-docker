@@ -6,8 +6,7 @@ FROM centos:7.8.2003
 # https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.0/x86/openGauss-1.0.0-CentOS-64bit.tar.gz   
 # 1.0.0   openeuler_aarch64   5e7f4030f2d5a10794672d49aaf7012e0f5cea2f061d9ee69b49b2f15e522b1f
 # https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.0/arm/openGauss-1.0.0-openEuler-64bit.tar.gz
-RUN cd /tmp && \
-    wget -O openGauss-1.0.0-CentOS-64bit.tar.gz https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.0/x86/openGauss-1.0.0-CentOS-64bit.tar.gz
+RUN wget -O /tmp/openGauss-1.0.0-CentOS-64bit.tar.gz https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.0/x86/openGauss-1.0.0-CentOS-64bit.tar.gz
 
 ENV LANG en_US.utf8
 
