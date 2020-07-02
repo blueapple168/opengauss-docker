@@ -47,7 +47,7 @@ openGauss镜像配置了本地信任机制，因此在容器内连接数据库�
 ## 从容器外部连接容器数据库
 openGauss的默认监听启动在容器内的5432端口上，如果想要从容器外部访问数据库，则需要在`docker run`的时候指定`-p`参数。比如以下命令将允许使用54321端口访问容器数据库。
 ```console
-$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=secretpassword@123 -p 54321:5432 blueapple168/opengauss:latest
+$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=secretpassword@123 -p 54321:5432 blueapple/opengauss:latest
 ```
 在上述命令正常启动容器数据库之后，可以通过外部的gsql进行数据库访问。
 ```console
