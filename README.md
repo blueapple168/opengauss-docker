@@ -23,7 +23,7 @@ openGauss社区官方网站：[https://opengauss.org/](https://opengauss.org/)
 * 会持续发布不同CPU架构（x86或者ARM）之上，不同操作系统的各种镜像
 
 **目前已经支持x86-64架构。**
-- x86-64架构的openGuass运行在[CentOS7.6操作系统](https://www.centos.org/)中
+- x86-64架构的openGuass运行在[CentOS7.8操作系统](https://www.centos.org/)中
 
 # 如何使用本镜像
 
