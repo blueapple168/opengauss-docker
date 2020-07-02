@@ -4,7 +4,7 @@
 - **维护者**：
 [blueapple OpenSource Team](https://github.com/blueapple168)
 - **哪里可以获取帮助**：
-[墨天轮-openGauss](https://www.modb.pro/openGauss)
+[blueapple-openGauss](https://github.com/blueapple168/opengauss-docker)
 
 # 支持的tags和 `Dockerfile`链接
 -	[`1.0.0`, `latest`](https://github.com/blueapple168/opengauss-docker/blob/master/1.0.0/dockerfile)
