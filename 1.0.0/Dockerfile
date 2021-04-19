@@ -47,7 +47,7 @@ RUN mkdir /docker-entrypoint-initdb.d
 ENV PGDATA /var/lib/opengauss/data
 
 COPY docker-entrypoint.sh /usr/local/bin/
-RUN ln -s /usr/local/bin/docker-entrypoint.sh / # backwards compat
+RUN chmod 755 /usr/local/bin/entrypoint.sh; ln -s /usr/local/bin/docker-entrypoint.sh / # backwards compat
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 
