@@ -1,4 +1,4 @@
-FROM centos:7.8.2003
+FROM ubuntu:18.04
 
 # Need to choose to download files based on platform architecture
 # Ver  OS    SHA256
@@ -11,7 +11,7 @@ ENV LANG en_US.utf8
 RUN set -eux; \
     groupadd -g 70 gaussdb; \
     useradd -u 70 -g gaussdb -d /home/gaussdb gaussdb; \
-    yum install -y \
+    apt-get update && apt-get install -y \
     bzip2 \
     bzip2-devel \
     curl \
@@ -20,6 +20,7 @@ RUN set -eux; \
     libkeyutils-dev \
     locales \
     libreadline-dev;\
+    rm -rf /var/lib/apt/lists/*; \
     ln -s /lib/x86_64-linux-gnu/libreadline.so.7 /lib/x86_64-linux-gnu/libreadline.so.6; \
     mkdir -p /var/lib/opengauss ; \
     mkdir -p /usr/local/opengauss ; \
