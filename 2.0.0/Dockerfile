@@ -4,7 +4,7 @@ FROM centos:7.8.2003
 # Ver  OS    SHA256
 # 2.0.0   centos_x86_64   c8fc757de0438a3e06add570b54b34561147a7aeb847b7eb72f2d161550670eb
 # https://github.com/opengauss-mirror/openGauss-server/archive/refs/tags/v2.0.0.tar.gz
-#ADD https://github.com/opengauss-mirror/openGauss-server/archive/refs/tags/v2.0.0.tar.gz /tmp/
+ADD https://github.com/opengauss-mirror/openGauss-server/archive/refs/tags/v2.0.0.tar.gz /tmp/
 
 ENV LANG en_US.utf8
 
@@ -24,7 +24,7 @@ RUN set -eux; \
     mkdir -p /var/lib/opengauss ; \
     mkdir -p /usr/local/opengauss ; \
     mkdir /docker-entrypoint-initdb.d ; \
-    curl -o /tmp/openGauss-server-2.0.0.tar.gz  -SL 'https://github.com/opengauss-mirror/openGauss-server/archive/refs/tags/v2.0.0.tar.gz' ; \
+    #curl -o /tmp/openGauss-server-2.0.0.tar.gz  -SL 'https://github.com/opengauss-mirror/openGauss-server/archive/refs/tags/v2.0.0.tar.gz' ; \
     tar -zxvf /tmp/openGauss-server-2.0.0.tar.gz -C /usr/local/opengauss ; \
     mkdir -p /var/run/opengauss ; \
     chown -R gaussdb:gaussdb /var/run/opengauss /docker-entrypoint-initdb.d ; \
