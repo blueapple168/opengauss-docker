@@ -10,7 +10,7 @@ ENV LANG en_US.utf8
 
 RUN set -eux; \
     groupadd -g 70 gaussdb; \
-    useradd -u 70 -g gaussdb -d /home/gaussdb gaussdb; \
+    useradd -u 70 -g gaussdb -d /home/gaussdb -s /bin/bash gaussdb; \
     apt-get update && apt-get install -y \
     curl \
     libaio-dev \
@@ -21,6 +21,7 @@ RUN set -eux; \
     ln -s /lib/x86_64-linux-gnu/libreadline.so.7 /lib/x86_64-linux-gnu/libreadline.so.6; \
     mkdir -p /var/lib/opengauss ; \
     mkdir -p /usr/local/opengauss ; \
+    mkdir -p /home/gaussdb; \
     mkdir /docker-entrypoint-initdb.d ; \
     curl -o /tmp/openGauss-server-2.0.0.tar.gz  -SL 'https://github.com/opengauss-mirror/openGauss-server/archive/refs/tags/v2.0.0.tar.gz' ; \
     tar -zxvf /tmp/openGauss-server-2.0.0.tar.gz -C /usr/local/opengauss ; \
@@ -32,7 +33,9 @@ RUN set -eux; \
     # Set Timezone CST
     rm -rf /etc/localtime ; \
     ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime ; \
-    locale-gen en_US.UTF-8 ; \
+    locale-gen en_US.UTF-8
+    
+ RUN set -eux; \   
     # Set ENV
     echo "export GAUSSHOME=/usr/local/opengauss"  >> /home/gaussdb/.bashrc ; \
     echo "export PATH=\$GAUSSHOME/bin:\$PATH " >> /home/gaussdb/.bashrc ; \
