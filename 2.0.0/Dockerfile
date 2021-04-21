@@ -35,8 +35,6 @@ RUN set -eux; \
     rm -rf /etc/localtime ; \
     ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime ; \
     locale-gen en_US.UTF-8 ; \
-    # Clean
-    yum clean all ; \
     # Set ENV
     echo "export GAUSSHOME=/usr/local/opengauss"  >> /home/gaussdb/.bashrc ; \
     echo "export PATH=\$GAUSSHOME/bin:\$PATH " >> /home/gaussdb/.bashrc ; \
@@ -53,7 +51,6 @@ RUN set -eux; \
     chmod +x /usr/local/bin/gosu
 
 ENV PGDATA /var/lib/opengauss/data
-
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN chmod 755 /usr/local/bin/entrypoint.sh ; \
     # backwards compat
