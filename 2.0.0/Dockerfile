@@ -5,7 +5,7 @@ FROM ubuntu:18.04
 # 2.0.0   centos_x86_64
 # https://github.com/opengauss-mirror/openGauss-server/archive/refs/tags/v2.0.0.tar.gz
 ADD https://github.com/opengauss-mirror/openGauss-server/archive/refs/tags/v2.0.0.tar.gz /tmp/
-
+COPY wal2json.so /tmp
 ENV LANG en_US.utf8
 
 RUN set -eux; \
