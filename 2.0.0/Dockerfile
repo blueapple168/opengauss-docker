@@ -16,8 +16,6 @@ RUN set -eux; \
     libaio-dev \
     libkeyutils-dev \
     locales \
-    libreadline-dev
-    locales \
     libreadline-dev;\
     rm -rf /var/lib/apt/lists/*; \
     ln -s /lib/x86_64-linux-gnu/libreadline.so.7 /lib/x86_64-linux-gnu/libreadline.so.6; \
@@ -27,7 +25,7 @@ RUN set -eux; \
     #curl -o /tmp/openGauss-server-2.0.0.tar.gz  -SL 'https://github.com/opengauss-mirror/openGauss-server/archive/refs/tags/v2.0.0.tar.gz' ; \
     tar -zxvf /tmp/openGauss-server-2.0.0.tar.gz -C /usr/local/opengauss ; \
     mkdir -p /var/run/opengauss ; \
-    chown -R gaussdb:gaussdb /var/run/opengauss /docker-entrypoint-initdb.d ; \
+    chown -R gaussdb:gaussdb /var/run/opengauss /usr/local/opengauss /docker-entrypoint-initdb.d ; \
     cp /tmp/wal2json.so /usr/local/opengauss ; \
     chmod 2777 /var/run/opengauss ; \
     rm -rf /tmp/* ; \
