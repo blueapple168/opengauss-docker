@@ -4,7 +4,7 @@ FROM ubuntu:18.04
 # Ver  OS    SHA256
 # 2.0.0   centos_x86_64
 # https://github.com/opengauss-mirror/openGauss-server/archive/refs/tags/v2.0.0.tar.gz
-ADD https://github.com/opengauss-mirror/openGauss-server/archive/refs/tags/v2.0.0.tar.gz /tmp/
+# ADD https://github.com/opengauss-mirror/openGauss-server/archive/refs/tags/v2.0.0.tar.gz /tmp/
 COPY wal2json.so /tmp
 ENV LANG en_US.utf8
 
@@ -22,7 +22,7 @@ RUN set -eux; \
     mkdir -p /var/lib/opengauss ; \
     mkdir -p /usr/local/opengauss ; \
     mkdir /docker-entrypoint-initdb.d ; \
-    #curl -o /tmp/openGauss-server-2.0.0.tar.gz  -SL 'https://github.com/opengauss-mirror/openGauss-server/archive/refs/tags/v2.0.0.tar.gz' ; \
+    curl -o /tmp/openGauss-server-2.0.0.tar.gz  -SL 'https://github.com/opengauss-mirror/openGauss-server/archive/refs/tags/v2.0.0.tar.gz' ; \
     tar -zxvf /tmp/openGauss-server-2.0.0.tar.gz -C /usr/local/opengauss ; \
     mkdir -p /var/run/opengauss ; \
     chown -R gaussdb:gaussdb /var/run/opengauss /usr/local/opengauss /docker-entrypoint-initdb.d ; \
