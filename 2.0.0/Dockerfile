@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 # Need to choose to download files based on platform architecture
 # Ver  OS    SHA256
-# 2.0.0   centos_x86_64   c8fc757de0438a3e06add570b54b34561147a7aeb847b7eb72f2d161550670eb
+# 2.0.0   centos_x86_64
 # https://github.com/opengauss-mirror/openGauss-server/archive/refs/tags/v2.0.0.tar.gz
 ADD https://github.com/opengauss-mirror/openGauss-server/archive/refs/tags/v2.0.0.tar.gz /tmp/
 
@@ -12,12 +12,11 @@ RUN set -eux; \
     groupadd -g 70 gaussdb; \
     useradd -u 70 -g gaussdb -d /home/gaussdb gaussdb; \
     apt-get update && apt-get install -y \
-    bzip2 \
-    bzip2-devel \
     curl \
-    libaio \
     libaio-dev \
     libkeyutils-dev \
+    locales \
+    libreadline-dev
     locales \
     libreadline-dev;\
     rm -rf /var/lib/apt/lists/*; \
