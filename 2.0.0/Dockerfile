@@ -13,6 +13,7 @@ RUN set -eux; \
     useradd -u 70 -g gaussdb -d /home/gaussdb -s /bin/bash gaussdb; \
     apt-get update && apt-get install -y \
     curl \
+    gnupg \
     libaio-dev \
     libkeyutils-dev \
     locales \
