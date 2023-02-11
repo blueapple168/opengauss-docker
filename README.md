@@ -7,8 +7,8 @@
 [blueapple-openGauss](https://github.com/blueapple168/opengauss-docker)
 
 # 支持的tags和 `Dockerfile`链接
--	[`1.0.0`, `latest`](https://github.com/blueapple168/opengauss-docker/blob/master/1.0.0/dockerfile)
--	[`2.0.0`, `latest`](https://github.com/blueapple168/opengauss-docker/blob/master/2.0.0/dockerfile)
+-	[`1.0.0`, `latest`](https://github.com/blueapple168/opengauss-docker/blob/master/1.0.0/Dockerfile)
+-	[`2.0.0`, `latest`](https://github.com/blueapple168/opengauss-docker/blob/master/2.0.0/Dockerfile)
 
 # 关于openGauss
 openGauss是一款开源关系型数据库管理系统，采用木兰宽松许可证v2发行。openGauss内核早期源自PostgreSQL，深度融合华为在数据库领域多年的经验，结合企业级场景需求，持续构建竞争力特性。同时openGauss也是一个开源、免费的数据库平台，鼓励社区贡献、合作。
